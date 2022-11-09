@@ -26,14 +26,14 @@ int main() {
     if(x1 > x2) {
         for(int x = x1; x >= x2; x--){
             int y = y1 + dy * (x - x1) / dx;
-            cout << "(" << x  << "," << y << ")" << endl;
+            cout << "(" << x  << ", " << y << ")" << endl;
         }
     }
     else {
 
         for(int x = x1; x <= x2; x++){
             int y = y1 + dy * (x - x1) / dx;
-            cout << "(" << x  << "," << y << ")" << endl;
+            cout << "(" << x  << ", " << y << ")" << endl;
         }
     }
 }
