@@ -9,15 +9,11 @@ function myTranslate(x, y, tx, ty) {
   return [newX, newY];
 }
 
-// TODO: Fix it
-function myRotate(x, y, angle) {
-  angle =  angle * (PI / 180)
-  newX = (x * cos(angle)) - (y * sin(angle))
-  newY = (x * sin(angle)) + (y * cos(angle))
-  return [newX, newY];
+function myRotate(x, y) {
+  rotate(radians(frameCount));
+  return [x, y];
 }
 
-// TODO: Fix it
 function myRotatePiv(x, y, angle, pivX, pivY) {
   angle =  angle * (PI / 180)
   newX = pivX + ((x - pivX) * cos(angle)) - 
@@ -51,14 +47,16 @@ function draw() {
   fill(255);
   polygon(width/2, height/2, 50, 6, null);
   fill(1);
-  polygon(width/2, height/2, 50, 6, myTranslate, 50, 50);
-  fill(1, 255, 1);
-  polygon(width/2, height/2, 50, 6, myRotate, 50);
+  translate(500,240)
+  polygon(0, 0, 50, 6, myTranslate, 50, 50);
   fill(1, 1, 255);
-  polygon(width/2, height/2, 50, 6, myRotatePiv, 50, 50, 50);
+   polygon(0, 0, 50, 6, myScale, 1.5, 1.5);
+  fill(1, 255, 1);
+  
+  polygon(0, 0, 50, 6, myRotatePiv, 50, 50, 50);
   fill(255, 1, 1);
-  polygon(width/2, height/2, 50, 6, myScale, 2, 2);
 
+  polygon(0, 0, 50, 6, myRotate);
 }
 
 function polygon(x, y, radius, npoints, transform, ...params) {
@@ -70,10 +68,7 @@ function polygon(x, y, radius, npoints, transform, ...params) {
     if (transform != null) {
       [sx, sy] = transform(sx,sy, ...params);
     }
-    
-    //console.log(sx + ',' + sy )
     vertex(sx, sy);
-    //throw new Error("Something went badly wrong!");
   }
   endShape(CLOSE);
 }
