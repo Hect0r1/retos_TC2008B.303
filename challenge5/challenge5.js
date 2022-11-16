@@ -1,7 +1,7 @@
 function setup() {
   createCanvas(640, 480);
 }
-//j
+
 
 function myTranslate(x, y, tx, ty) {
   newX = x + tx;
