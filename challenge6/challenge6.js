@@ -80,7 +80,7 @@ function mouseDragged()
     ellipse(x3,y3, 30, 30);
     ellipse(x4,y4, 30, 30);
     noFill();
-    bezier(x1, y1, x2, y2, x3, y3, x4, y4);
+    bezier(x1, y1, x4, y4, x3, y3, x2, y2);
   }
   if(dragPointsCurve == 2){
     background(255);
@@ -89,7 +89,7 @@ function mouseDragged()
     ellipse(x3,y3, 30, 30);
     ellipse(x4,y4, 30, 30);
     noFill();
-    bezier(x1, y1, x2, y2, x3, y3, x4, y4);
+    bezier(x1, y1, x4, y4, x3, y3, x2, y2);
   }
 }
 
@@ -99,7 +99,7 @@ function mouseReleased(){
     ellipse(x3,y3, 30, 30);
     ellipse(x4,y4, 30, 30);
     noFill();
-    bezier(x1, y1, x2, y2, x3, y3, x4, y4);
+    bezier(x1, y1, x4, y4, x3, y3, x2, y2);
     finished_circle++;
     curveFinished = 1;
   }
