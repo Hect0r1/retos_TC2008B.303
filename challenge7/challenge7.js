@@ -5,6 +5,9 @@ function setup() {
 }
 
 function draw() {
+  if(clickNum == 0){
+    background(220);
+  }
   if(clickNum == 1){
     background(220);
     noFill();
